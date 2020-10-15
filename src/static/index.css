@@ -1,0 +1,77 @@
+html,body,#root,.App{
+    min-height: 100vh;
+}
+/* <576 */
+.wrap{
+    margin:0px 5px;
+}
+#header{
+    padding: 0px;
+}
+#footer{
+    padding:24px 0px;
+}
+.logo{
+    text-align: center;
+}
+.ant-menu-horizontal{
+    line-height: 64px;
+}
+.wrap .topic-list{
+    background-color: white;
+    padding:5px 15px;
+}
+.topic-tag{
+    margin:0px 5px;
+}
+.topic-tag-empty{
+    display: none;
+}
+.time-from-now{
+    text-align: right;
+}
+.page-wrap{
+    background-color: white;
+    text-align: center;
+    padding:10px 0px; 
+}
+/* >=567 */
+@media all and (min-width:576px){
+    .wrap{
+        margin:0px 10px;
+    }
+}
+/* >=768 */
+@media all and (min-width:768px){
+    .wrap{
+        margin:0px 15px;
+    }
+}
+/* >=992 */
+@media all and (min-width:992px){
+    .wrap{
+        margin:0px 20px;
+    }
+}
+/* >=1200 */
+@media all and (min-width:1200px){
+    .wrap{
+        width:980px;
+        margin:0px auto;
+    }
+    .wrap .topic-list{
+        background-color: white;
+        padding:0px 20px;
+    }
+}
+/* >=1600 */
+@media all and (min-width:1600px){
+    .wrap{
+        width:1200px;
+        margin:0px auto;
+    }
+    .wrap .topic-list{
+        background-color: white;
+        padding:0px 30px;
+    }
+}
