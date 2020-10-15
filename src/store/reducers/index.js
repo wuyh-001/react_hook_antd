@@ -1,3 +1,4 @@
+// 主题列表
 export function topics(state={
     loading:true,
     data:[]
@@ -22,6 +23,7 @@ export function topics(state={
     }
 };
 
+// 主题详情
 export function topicDetail(state={
     loading:true,
     data:{
@@ -60,3 +62,28 @@ export function topicDetail(state={
             return state;
     }
 }
+
+// 用户详情
+export function userDetail(state={
+    loading:true,
+    data:{}
+},action){
+    switch(action.type){
+        // 数据请求中
+        case 'userDetail_loading':
+            return {
+                loading:true,
+                data:{}
+            };
+        break;
+        // 数据请求结束
+        case 'userDetail_finished':
+            return {
+                loading:false,
+                data:action.data
+            };
+        break;
+        default:
+            return state;
+    }
+};

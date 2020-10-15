@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { Alert } from 'antd';
 
 import {useTopicDetail} from './../../store/action';
-import Detail from './detail'
+import Detail from './detail';
+import Reply from './reply'
 
 export default function TopicPage(){
     let {id}=useParams();
@@ -13,8 +14,7 @@ export default function TopicPage(){
     let {loading,data,isError,err_msg}=useSelector(state=>state.topicDetail)
     useEffect(()=>{
         getData(id);
-    },[id])
-    
+    },[id]);
     return (
         <div>
             {
@@ -29,10 +29,13 @@ export default function TopicPage(){
                         }}
                     />
                 ) : (
-                    <Detail data={data} loading={loading}/>
+                    <Fragment>
+                        <Detail data={data} loading={loading}/>
+                        <Reply loading={loading} data={data.replies}/>
+                    </Fragment>
+                    
                 )
             }
-            
         </div>
     );
 }

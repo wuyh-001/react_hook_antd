@@ -38,8 +38,24 @@ function useTopicDetail(){
         }).catch((err)=>{
             dispatch({
                 type:'topicDetail_error',
-                list:[],
                 err_msg:err.response.data.error_msg
+            });
+        })
+    }
+};
+
+// 获取主题列表
+function useUserDetail(){
+    let dispatch=useDispatch();
+    // 每次请求数据的时候执行的是该函数
+    return function(username){
+        dispatch({
+            type:'userDetail_loading'
+        });
+        http.get(`/user/${username}`).then((res)=>{
+            dispatch({
+                type:'userDetail_finished',
+                data:res.data.data
             });
         })
     }
@@ -47,5 +63,6 @@ function useTopicDetail(){
 
 export {
     useTopicList,
-    useTopicDetail
+    useTopicDetail,
+    useUserDetail
 }

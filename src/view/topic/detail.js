@@ -9,7 +9,6 @@ import FromNow from './../../component/fromNow';
 export default function Detail(props){
     let {loading,data}=props;
     let {author,content,create_at,good,top,tab,title,visit_count}=data;
-    console.log(author)
     return(
         <Card
             type="inner"

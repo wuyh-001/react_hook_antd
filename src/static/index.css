@@ -25,7 +25,9 @@ html,body,#root,.App{
     margin:0px 5px;
 }
 .topic-tag-empty{
-    display: none;
+    height:1px;
+    width:5px;
+    padding: 0px;
 }
 .time-from-now{
     text-align: right;
@@ -34,6 +36,12 @@ html,body,#root,.App{
     background-color: white;
     text-align: center;
     padding:10px 0px; 
+}
+.wrap .ant-card{
+    margin-top:10px;
+}
+.user-details {
+    text-align: center;
 }
 /* >=567 */
 @media all and (min-width:576px){
